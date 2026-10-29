@@ -1,0 +1,34 @@
+[
+  {
+    "name": "On-Prem Git & SVN for Jira Cloud",
+    "status": "review",
+    "icon": "assets/apps/on-prem-git-svn.png",
+    "summary": "Commits, branches and merge requests from self-managed GitLab, and revisions from Subversion, in the Jira Cloud Development panel.",
+    "points": [
+      "Nothing to open in your firewall: your servers push the events",
+      "Runs on Atlassian: no servers of ours, data stays in Atlassian's cloud",
+      "Missing pushes and SVN revisions are detected, never lost silently"
+    ],
+    "pricing": "Free for up to 10 users",
+    "links": [
+      {"label": "Details", "href": "/on-prem-git-svn-for-jira/"},
+      {"label": "User guide", "href": "/on-prem-git-svn-for-jira/user-guide.html"},
+      {"label": "Security", "href": "/on-prem-git-svn-for-jira/security.html"}
+    ]
+  },
+  {
+    "name": "Ops Essentials for Jira Service Management",
+    "status": "development",
+    "icon": "",
+    "summary": "Operations features for Jira Service Management Standard: heartbeat monitoring, response reports, stakeholder updates and a long-term alert archive.",
+    "points": [
+      "Heartbeats: an alert opens when a backup, job or integration stops checking in",
+      "Reports: time to acknowledge and resolve, after-hours load, noisiest alerts",
+      "Stakeholder updates to Slack, Microsoft Teams, Google Chat or e-mail"
+    ],
+    "pricing": "",
+    "links": [
+      {"label": "Tell me when it's available", "href": "mailto:support@steadyseam.com?subject=Ops%20Essentials%20for%20Jira%20Service%20Management"}
+    ]
+  }
+]
