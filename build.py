@@ -109,11 +109,13 @@ def support_card(app):
     support = app['support']
     tips = ''.join(f'<li>{esc(t)}</li>' for t in support.get('include', []))
     links = ''.join(f'<a href="{esc(link["href"])}">{esc(link["label"])}</a>' for link in support.get('links', []))
+    note = f'<p><strong>{esc(support["note"])}</strong></p>' if support.get('note') else ''
     return f"""
-      <article class="card">
+      <article class="card" id="{esc(app['slug'])}">
         <h3>{esc(app['name'])}</h3>
         <p>Please also include:</p>
         <ul>{tips}</ul>
+        {note}
         <div class="links">{links}</div>
       </article>"""
 

@@ -1,6 +1,7 @@
 [
   {
     "name": "On-Prem Git & SVN for Jira Cloud",
+    "slug": "on-prem-git-svn-for-jira",
     "status": "review",
     "icon": "assets/apps/on-prem-git-svn.png",
     "summary": "Commits, branches and merge requests from self-managed GitLab, and revisions from Subversion, in the Jira Cloud Development panel.",
@@ -30,17 +31,34 @@
   },
   {
     "name": "Ops Essentials for Jira Service Management",
-    "status": "development",
-    "icon": "",
-    "summary": "Operations features for Jira Service Management Standard: heartbeat monitoring, response reports, stakeholder updates and a long-term alert archive.",
+    "slug": "ops-essentials-for-jsm",
+    "status": "review",
+    "icon": "assets/apps/ops-essentials.png",
+    "summary": "Heartbeat monitoring, operations reports, stakeholder updates and a long-term alert archive for Jira Service Management.",
     "points": [
       "Heartbeats: an alert opens when a backup, job or integration stops checking in",
       "Reports: time to acknowledge and resolve, after-hours load, noisiest alerts",
-      "Stakeholder updates to Slack, Microsoft Teams, Google Chat or e-mail"
+      "Stakeholder updates to Slack, Microsoft Teams, Google Chat or e-mail",
+      "30-day free trial on the Atlassian Marketplace"
     ],
-    "pricing": "",
+    "pricing": "Priced per agent",
     "links": [
-      {"label": "Tell me when it's available", "href": "mailto:support@steadyseam.com?subject=Ops%20Essentials%20for%20Jira%20Service%20Management"}
-    ]
+      {"label": "Details", "href": "/ops-essentials-for-jsm/"},
+      {"label": "User guide", "href": "/ops-essentials-for-jsm/user-guide.html"},
+      {"label": "Security", "href": "/ops-essentials-for-jsm/security.html"}
+    ],
+    "support": {
+      "include": [
+        "a screenshot of the Overview tab of the app (Settings > Apps > Ops Essentials);",
+        "for heartbeats: the name of the heartbeat and the time of its last call;",
+        "for stakeholder updates: the result shown in Recent updates."
+      ],
+      "note": "Never send webhook addresses or API keys.",
+      "links": [
+        {"label": "User guide", "href": "/ops-essentials-for-jsm/user-guide.html"},
+        {"label": "Troubleshooting", "href": "/ops-essentials-for-jsm/user-guide.html#troubleshooting"},
+        {"label": "Security", "href": "/ops-essentials-for-jsm/security.html"}
+      ]
+    }
   }
 ]
