@@ -14,7 +14,19 @@
       {"label": "Details", "href": "/on-prem-git-svn-for-jira/"},
       {"label": "User guide", "href": "/on-prem-git-svn-for-jira/user-guide.html"},
       {"label": "Security", "href": "/on-prem-git-svn-for-jira/security.html"}
-    ]
+    ],
+    "support": {
+      "include": [
+        "a screenshot of the app page in Jira (Settings > Apps > On-Prem Git & SVN), including Needs attention if it shows anything;",
+        "for GitLab: the response shown in the system hook's Recent events;",
+        "for Subversion: the output of the status command of the connector hook."
+      ],
+      "links": [
+        {"label": "User guide", "href": "/on-prem-git-svn-for-jira/user-guide.html"},
+        {"label": "Troubleshooting Subversion", "href": "/on-prem-git-svn-for-jira/user-guide.html#troubleshooting-subversion-deliveries"},
+        {"label": "Security", "href": "/on-prem-git-svn-for-jira/security.html"}
+      ]
+    }
   },
   {
     "name": "Ops Essentials for Jira Service Management",

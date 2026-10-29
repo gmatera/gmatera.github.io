@@ -38,6 +38,9 @@ body { margin: 0; background: var(--bg); color: var(--ink);
 a { color: var(--accent); }
 .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
 header.top { padding: 22px 0; }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+nav.top a { margin-left: 20px; color: var(--ink); text-decoration: none; font-weight: 600; font-size: 16px; }
+nav.top a:hover { color: var(--accent); }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink);
   font-weight: 700; font-size: 22px; letter-spacing: -0.01em; }
 .mark { width: 38px; height: 38px; flex: none; }
@@ -68,6 +71,11 @@ section { padding: 34px 0; }
 .principles p { margin: 0; color: var(--muted); }
 .contact { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 26px; }
 .contact p { margin: 6px 0; }
+.doc h2 { margin-top: 10px; }
+.doc ul { padding-left: 22px; }
+.doc li { margin-bottom: 6px; }
+.doc .card { margin-bottom: 18px; }
+.doc .card h3 { margin-bottom: 8px; }
 footer { padding: 30px 0 46px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); margin-top: 26px; }
 footer p { margin: 4px 0; }
 """
@@ -96,6 +104,20 @@ def card(app):
       </article>"""
 
 
+def support_card(app):
+    """Cosa allegare a una richiesta per una certa app (campo "support" di apps.json)."""
+    support = app['support']
+    tips = ''.join(f'<li>{esc(t)}</li>' for t in support.get('include', []))
+    links = ''.join(f'<a href="{esc(link["href"])}">{esc(link["label"])}</a>' for link in support.get('links', []))
+    return f"""
+      <article class="card">
+        <h3>{esc(app['name'])}</h3>
+        <p>Please also include:</p>
+        <ul>{tips}</ul>
+        <div class="links">{links}</div>
+      </article>"""
+
+
 def page(title, description, body):
     return f"""<!doctype html>
 <html lang="en">
@@ -108,12 +130,13 @@ def page(title, description, body):
 <style>{STYLE}</style>
 </head>
 <body>
-<header class="top"><div class="wrap"><a class="brand" href="./">{MARK}<span>Steadyseam</span></a></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="./">{MARK}<span>Steadyseam</span></a>
+  <nav class="top"><a href="./#apps">Apps</a><a href="support.html">Support</a></nav></div></header>
 <main class="wrap">
 {body}
 </main>
 <footer><div class="wrap">
-  <p>Steadyseam is a brand of Sasso di Matera Giuseppe S.a.s. · Via Clefi 2, 20146 Milano, Italy · VAT IT13043470965 · <a href="privacy.html">Privacy</a></p>
+  <p>Steadyseam is a brand of Sasso di Matera Giuseppe S.a.s. · Via Clefi 2, 20146 Milano, Italy · VAT IT13043470965 · <a href="support.html">Support</a> · <a href="privacy.html">Privacy</a></p>
   <p>Atlassian, Jira and Jira Service Management are trademarks of Atlassian. GitLab is a trademark of GitLab Inc. Subversion is a trademark of the Apache Software Foundation. Steadyseam is not affiliated with or endorsed by these companies.</p>
 </div></footer>
 </body>
@@ -155,7 +178,7 @@ def main():
 <section>
   <div class="contact">
     <h2>Contact</h2>
-    <p>Support: <a href="mailto:support@steadyseam.com">support@steadyseam.com</a></p>
+    <p>Support: <a href="mailto:support@steadyseam.com">support@steadyseam.com</a> (<a href="support.html">hours and what to include</a>)</p>
     <p>Partners and resellers: <a href="mailto:giuseppe@steadyseam.com">giuseppe@steadyseam.com</a></p>
   </div>
 </section>
@@ -181,7 +204,37 @@ def main():
 """
     with open(os.path.join(HERE, 'privacy.html'), 'w', encoding='utf-8', newline='\n') as f:
         f.write(page('Privacy · Steadyseam', 'Privacy information for the Steadyseam website.', privacy))
-    print('index.html and privacy.html written,', len(apps), 'apps')
+    app_cards = ''.join(support_card(app) for app in apps if app.get('support'))
+    support = f"""
+<section class="hero">
+  <h1>Support</h1>
+  <p>Questions and problems with any Steadyseam app reach the developer who built it, in English or Italian.</p>
+</section>
+<section class="doc">
+  <div class="card">
+    <h2>Contact</h2>
+    <p>E-mail: <a href="mailto:support@steadyseam.com">support@steadyseam.com</a></p>
+    <p>Hours: Monday to Friday, 9:00-18:00 Central European Time (Europe/Rome), except Italian public holidays.</p>
+    <p>Response: first answer within one business day. Problems that stop an app from working for everyone come first.</p>
+  </div>
+  <h2>What to include</h2>
+  <ul>
+    <li>the name of the app and the address of your site (for example <code>your-company.atlassian.net</code>);</li>
+    <li>what you expected and what happened instead, with screenshots if you can.</li>
+  </ul>
+  <p><strong>Never send passwords, secret tokens or API keys.</strong> We will never ask for them.</p>
+  {app_cards}
+  <h2>Security issues</h2>
+  <p>Report vulnerabilities privately to <a href="mailto:support@steadyseam.com">support@steadyseam.com</a> and please do
+  not disclose them publicly before we have answered. We acknowledge reports within two business days and keep you
+  informed until the issue is fixed. Each app's security page describes how the app is built.</p>
+  <h2>Your data</h2>
+  <p>We use what you send us only to answer you, as described in our <a href="privacy.html">privacy information</a>.</p>
+</section>
+"""
+    with open(os.path.join(HERE, 'support.html'), 'w', encoding='utf-8', newline='\n') as f:
+        f.write(page('Support · Steadyseam', 'How to get help with Steadyseam apps for Atlassian Cloud: contact, hours and what to include.', support))
+    print('index.html, privacy.html and support.html written,', len(apps), 'apps')
 
 
 if __name__ == '__main__':

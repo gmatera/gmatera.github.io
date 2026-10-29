@@ -25,6 +25,9 @@ body { margin: 0; background: var(--bg); color: var(--ink);
 a { color: var(--accent); }
 .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
 header.top { padding: 22px 0; }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+nav.top a { margin-left: 20px; color: var(--ink); text-decoration: none; font-weight: 600; font-size: 16px; }
+nav.top a:hover { color: var(--accent); }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink);
   font-weight: 700; font-size: 22px; letter-spacing: -0.01em; }
 .mark { width: 38px; height: 38px; flex: none; }
@@ -55,12 +58,18 @@ section { padding: 34px 0; }
 .principles p { margin: 0; color: var(--muted); }
 .contact { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 26px; }
 .contact p { margin: 6px 0; }
+.doc h2 { margin-top: 10px; }
+.doc ul { padding-left: 22px; }
+.doc li { margin-bottom: 6px; }
+.doc .card { margin-bottom: 18px; }
+.doc .card h3 { margin-bottom: 8px; }
 footer { padding: 30px 0 46px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); margin-top: 26px; }
 footer p { margin: 4px 0; }
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap"><a class="brand" href="./"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="var(--brand)"/><path d="M21 14v36M43 14v36" stroke="#fff" stroke-width="6" stroke-linecap="round"/><path d="M27 22h10M27 32h10M27 42h10" stroke="#9fd8ff" stroke-width="4" stroke-linecap="round"/></svg><span>Steadyseam</span></a></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="./"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="var(--brand)"/><path d="M21 14v36M43 14v36" stroke="#fff" stroke-width="6" stroke-linecap="round"/><path d="M27 22h10M27 32h10M27 42h10" stroke="#9fd8ff" stroke-width="4" stroke-linecap="round"/></svg><span>Steadyseam</span></a>
+  <nav class="top"><a href="./#apps">Apps</a><a href="support.html">Support</a></nav></div></header>
 <main class="wrap">
 
 <section class="hero">
@@ -80,7 +89,7 @@ footer p { margin: 4px 0; }
 
 </main>
 <footer><div class="wrap">
-  <p>Steadyseam is a brand of Sasso di Matera Giuseppe S.a.s. · Via Clefi 2, 20146 Milano, Italy · VAT IT13043470965 · <a href="privacy.html">Privacy</a></p>
+  <p>Steadyseam is a brand of Sasso di Matera Giuseppe S.a.s. · Via Clefi 2, 20146 Milano, Italy · VAT IT13043470965 · <a href="support.html">Support</a> · <a href="privacy.html">Privacy</a></p>
   <p>Atlassian, Jira and Jira Service Management are trademarks of Atlassian. GitLab is a trademark of GitLab Inc. Subversion is a trademark of the Apache Software Foundation. Steadyseam is not affiliated with or endorsed by these companies.</p>
 </div></footer>
 </body>
