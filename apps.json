@@ -2,7 +2,7 @@
   {
     "name": "On-Prem Git & SVN for Jira Cloud",
     "slug": "on-prem-git-svn-for-jira",
-    "status": "review",
+    "status": "available",
     "icon": "assets/apps/on-prem-git-svn.png",
     "summary": "Commits, branches and merge requests from self-managed GitLab, and revisions from Subversion, in the Jira Cloud Development panel.",
     "points": [
@@ -12,9 +12,9 @@
     ],
     "pricing": "Free for up to 10 users",
     "links": [
+      {"label": "Get it on the Marketplace", "href": "https://marketplace.atlassian.com/apps/3886630403/on-prem-git-svn-for-jira-cloud?utm_source=steadyseam&utm_medium=catalog&utm_campaign=on-prem-git-svn"},
       {"label": "Details", "href": "/on-prem-git-svn-for-jira/"},
-      {"label": "User guide", "href": "/on-prem-git-svn-for-jira/user-guide.html"},
-      {"label": "Security", "href": "/on-prem-git-svn-for-jira/security.html"}
+      {"label": "User guide", "href": "/on-prem-git-svn-for-jira/user-guide.html"}
     ],
     "support": {
       "include": [
