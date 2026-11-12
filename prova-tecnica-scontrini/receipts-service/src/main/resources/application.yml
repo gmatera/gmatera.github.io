@@ -1,0 +1,49 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: receipts-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/receipts_db?allowPublicKeyRetrieval=true&useSSL=false
+    username: receipts
+    password: receipts
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  kafka:
+    bootstrap-servers: localhost:29092
+
+logging:
+  structured:
+    format:
+      console: ecs
+
+app:
+  zone: Europe/Rome
+
+account:
+  base-url: http://localhost:8081
+
+outbox:
+  publish-delay-ms: 1000
+
+closure:
+  # ogni notte alle 00:30 crea le chiusure del giorno prima
+  cron: "0 30 0 * * *"
+
+transmission:
+  base-url: http://localhost:8090
+  connect-timeout-ms: 2000
+  read-timeout-ms: 3000
+  job:
+    initial-delay-ms: 10000
+    delay-ms: 10000
+  retry:
+    max-attempts: 5
+    base-delay-seconds: 30

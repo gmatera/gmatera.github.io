@@ -1,0 +1,18 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: transmission-stub
+
+logging:
+  structured:
+    format:
+      console: ecs
+
+stub:
+  # probabilità che una richiesta fallisca con 503
+  failure-rate: 0.3
+  # probabilità che la risposta arrivi in ritardo (oltre il timeout di lettura di receipts, 3s)
+  slow-rate: 0.2
+  slow-delay-ms: 5000
