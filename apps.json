@@ -32,7 +32,7 @@
   {
     "name": "Ops Essentials for Jira Service Management",
     "slug": "ops-essentials-for-jsm",
-    "status": "review",
+    "status": "available",
     "icon": "assets/apps/ops-essentials.png",
     "summary": "Heartbeat monitoring, operations reports, stakeholder updates and a long-term alert archive for Jira Service Management.",
     "points": [
@@ -43,6 +43,7 @@
     ],
     "pricing": "Priced per agent",
     "links": [
+      {"label": "Get it on the Marketplace", "href": "https://marketplace.atlassian.com/apps/2213311074/ops-essentials-for-jira-service-management?utm_source=steadyseam&utm_medium=catalog&utm_campaign=ops-essentials-jsm"},
       {"label": "Details", "href": "/ops-essentials-for-jsm/"},
       {"label": "User guide", "href": "/ops-essentials-for-jsm/user-guide.html"},
       {"label": "Security", "href": "/ops-essentials-for-jsm/security.html"}
