@@ -61,5 +61,35 @@
         {"label": "Security", "href": "/ops-essentials-for-jsm/security.html"}
       ]
     }
+  },
+  {
+    "name": "Mermaid & PlantUML Diagrams – Sharp Export for Confluence",
+    "slug": "mermaid-plantuml-diagrams",
+    "status": "development",
+    "icon": "assets/apps/mermaid-plantuml-diagrams.png",
+    "summary": "Mermaid and PlantUML diagrams written as text in Confluence Cloud, with a full-screen live editor and sharp images in PDF and Word exports.",
+    "points": [
+      "One macro for Mermaid and PlantUML, with a full-screen live editor",
+      "Sharp diagrams in PDF and Word exports",
+      "Full-screen zoom, SVG and PNG download, code block conversion",
+      "Runs entirely on Atlassian Forge, with no external calls"
+    ],
+    "pricing": "Free for up to 10 users",
+    "links": [
+      {"label": "Details", "href": "/mermaid-plantuml-diagrams/"},
+      {"label": "User guide", "href": "/mermaid-plantuml-diagrams/user-guide.html"},
+      {"label": "Security", "href": "/mermaid-plantuml-diagrams/security.html"}
+    ],
+    "support": {
+      "include": [
+        "the diagram text (or a minimal example that shows the problem);",
+        "what you expected and what you see, with a screenshot of the macro or of the error message;",
+        "for export problems: whether the diagram was saved in the editor, and the export format (PDF or Word)."
+      ],
+      "links": [
+        {"label": "User guide", "href": "/mermaid-plantuml-diagrams/user-guide.html"},
+        {"label": "Security", "href": "/mermaid-plantuml-diagrams/security.html"}
+      ]
+    }
   }
 ]
