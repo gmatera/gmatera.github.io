@@ -65,7 +65,7 @@
   {
     "name": "Mermaid & PlantUML Diagrams – Sharp Export for Confluence",
     "slug": "mermaid-plantuml-diagrams",
-    "status": "development",
+    "status": "review",
     "icon": "assets/apps/mermaid-plantuml-diagrams.png",
     "summary": "Mermaid and PlantUML diagrams written as text in Confluence Cloud, with a full-screen live editor and sharp images in PDF and Word exports.",
     "points": [
